@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NewsHub - News Portal</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="top-header">
+
+        <div class="logo">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>News<span>Hub</span></span>
+        </div>
+
+        <div class="date">
+            <i class="fa-regular fa-calendar"></i>
+            <span id="currentDate"></span>
+        </div>
+
+        <div class="header-actions">
+
+            <button id="darkModeBtn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button class="login-btn">
+                <i class="fa-solid fa-user"></i>
+                Login
+            </button>
+
+        </div>
+
+    </div>
+
+    <nav class="navbar">
+
+        <button class="mobile-menu" id="mobileMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul id="navMenu">
+
+            <li class="active">
+                <a href="#" data-category="all">Home</a>
+            </li>
+
+            <li>
+                <a href="#" data-category="national">National</a>
+            </li>
+
+            <li>
+                <a href="#" data-category="world">World</a>
+            </li>
+
+            <li>
+                <a href="#" data-category="technology">Technology</a>
+            </li>
+
+            <li>
+                <a href="#" data-category="business">Business</a>
+            </li>
+
+            <li>
+                <a href="#" data-category="sports">Sports</a>
+            </li>
+
+            <li>
+                <a href="#" data-category="entertainment">Entertainment</a>
+            </li>
+
+            <li>
+                <a href="#" data-category="health">Health</a>
+            </li>
+
+        </ul>
+
+        <div class="nav-search">
+
+            <input type="text"
+                   id="searchInput"
+                   placeholder="Search news...">
+
+            <button id="searchBtn">
+                <i class="fa-solid fa-search"></i>
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= BREAKING NEWS ================= -->
+
+<div class="breaking">
+
+    <div class="breaking-title">
+        <i class="fa-solid fa-bolt"></i>
+        BREAKING
+    </div>
+
+    <div class="breaking-text">
+        <span>
+            Latest updates and important news from around the world
+        </span>
+    </div>
+
+</div>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-main">
+
+            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80"
+                 alt="News">
+
+            <div class="hero-overlay">
+
+                <span class="category national">
+                    NATIONAL
+                </span>
+
+                <h1>
+                    Latest News and Updates From Around the Country
+                </h1>
+
+                <p>
+                    Stay informed with the latest developments,
+                    important stories and breaking updates.
+                </p>
+
+                <small>
+                    <i class="fa-regular fa-clock"></i>
+                    2 hours ago
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-side">
+
+            <article class="side-news">
+
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+                     alt="Technology">
+
+                <div>
+                    <span class="category technology">
+                        TECHNOLOGY
+                    </span>
+
+                    <h3>
+                        New Technology Is Changing the Way We Live
+                    </h3>
+
+                    <small>1 hour ago</small>
+                </div>
+
+            </article>
+
+
+            <article class="side-news">
+
+                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80"
+                     alt="Sports">
+
+                <div>
+                    <span class="category sports">
+                        SPORTS
+                    </span>
+
+                    <h3>
+                        Major Sports Event Draws Thousands of Fans
+                    </h3>
+
+                    <small>3 hours ago</small>
+                </div>
+
+            </article>
+
+
+            <article class="side-news">
+
+                <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=600&q=80"
+                     alt="World News">
+
+                <div>
+                    <span class="category world">
+                        WORLD
+                    </span>
+
+                    <h3>
+                        Global Leaders Meet to Discuss Important Issues
+                    </h3>
+
+                    <small>4 hours ago</small>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTENT -->
+
+    <div class="content-layout">
+
+        <!-- NEWS -->
+
+        <section class="news-section">
+
+            <div class="section-title">
+
+                <div>
+                    <h2>Latest News</h2>
+                    <p>Top stories from NewsHub</p>
+                </div>
+
+                <button id="viewAll">
+                    View All
+                </button>
+
+            </div>
+
+
+            <div class="news-grid" id="newsGrid">
+
+                <!-- CARD 1 -->
+
+                <article class="news-card"
+                         data-category="national">
+
+                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=800&q=80"
+                         alt="National News">
+
+                    <div class="news-content">
+
+                        <span class="category national">
+                            NATIONAL
+                        </span>
+
+                        <h3>
+                            Important Developments Make Headlines Today
+                        </h3>
+
+                        <p>
+                            Here are the major developments and stories
+                            making headlines across the country.
+                        </p>
+
+                        <div class="news-meta">
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                2 hours ago
+                            </span>
+
+                            <span>
+                                <i class="fa-regular fa-eye"></i>
+                                2.4K
+                            </span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 2 -->
+
+                <article class="news-card"
+                         data-category="technology">
+
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                         alt="Technology">
+
+                    <div class="news-content">
+
+                        <span class="category technology">
+                            TECHNOLOGY
+                        </span>
+
+                        <h3>
+                            Artificial Intelligence Continues to Transform Industries
+                        </h3>
+
+                        <p>
+                            New digital technologies are creating opportunities
+                            across multiple industries.
+                        </p>
+
+                        <div class="news-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                3 hours ago
+                            </span>
+
+                            <span>
+                                <i class="fa-regular fa-eye"></i>
+                                4.1K
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 3 -->
+
+                <article class="news-card"
+                         data-category="business">
+
+                    <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80"
+                         alt="Business">
+
+                    <div class="news-content">
+
+                        <span class="category business">
+                            BUSINESS
+                        </span>
+
+                        <h3>
+                            Markets Show Strong Activity During Today's Session
+                        </h3>
+
+                        <p>
+                            Businesses and investors are closely watching
+                            developments in global markets.
+                        </p>
+
+                        <div class="news-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                4 hours ago
+                            </span>
+
+                            <span>
+                                <i class="fa-regular fa-eye"></i>
+                                3.2K
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 4 -->
+
+                <article class="news-card"
+                         data-category="sports">
+
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=80"
+                         alt="Sports">
+
+                    <div class="news-content">
+
+                        <span class="category sports">
+                            SPORTS
+                        </span>
+
+                        <h3>
+                            Championship Competition Enters an Exciting Stage
+                        </h3>
+
+                        <p>
+                            Teams are preparing for an exciting series of
+                            matches in the upcoming competition.
+                        </p>
+
+                        <div class="news-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                5 hours ago
+                            </span>
+
+                            <span>
+                                <i class="fa-regular fa-eye"></i>
+                                5.6K
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 5 -->
+
+                <article class="news-card"
+                         data-category="entertainment">
+
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80"
+                         alt="Entertainment">
+
+                    <div class="news-content">
+
+                        <span class="category entertainment">
+                            ENTERTAINMENT
+                        </span>
+
+                        <h3>
+                            New Movies and Shows Attract Audiences
+                        </h3>
+
+                        <p>
+                            The entertainment industry has several exciting
+                            releases and events this week.
+                        </p>
+
+                        <div class="news-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                6 hours ago
+                            </span>
+
+                            <span>
+                                <i class="fa-regular fa-eye"></i>
+                                3.9K
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 6 -->
+
+                <article class="news-card"
+                         data-category="health">
+
+                    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80"
+                         alt="Health">
+
+                    <div class="news-content">
+
+                        <span class="category health">
+                            HEALTH
+                        </span>
+
+                        <h3>
+                            Experts Share Important Tips for Healthy Living
+                        </h3>
+
+                        <p>
+                            Health professionals share useful information
+                            about maintaining a healthy lifestyle.
+                        </p>
+
+                        <div class="news-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                7 hours ago
+                            </span>
+
+                            <span>
+                                <i class="fa-regular fa-eye"></i>
+                                2.8K
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="no-results" id="noResults">
+                <i class="fa-solid fa-newspaper"></i>
+                <h3>No News Found</h3>
+                <p>Try searching with another keyword.</p>
+            </div>
+
+        </section>
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="right-sidebar">
+
+            <!-- TRENDING -->
+
+            <div class="sidebar-box">
+
+                <div class="sidebar-title">
+                    <h2>Trending News</h2>
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+
+
+                <div class="trending">
+
+                    <span>01</span>
+
+                    <div>
+                        <h4>
+                            Top stories everyone is talking about today
+                        </h4>
+                        <small>12K views</small>
+                    </div>
+
+                </div>
+
+
+                <div class="trending">
+
+                    <span>02</span>
+
+                    <div>
+                        <h4>
+                            Technology innovations attract global attention
+                        </h4>
+                        <small>9.5K views</small>
+                    </div>
+
+                </div>
+
+
+                <div class="trending">
+
+                    <span>03</span>
+
+                    <div>
+                        <h4>
+                            Sports fans prepare for an exciting weekend
+                        </h4>
+                        <small>8.7K views</small>
+                    </div>
+
+                </div>
+
+
+                <div class="trending">
+
+                    <span>04</span>
+
+                    <div>
+                        <h4>
+                            Entertainment industry announces new projects
+                        </h4>
+                        <small>7.2K views</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEWSLETTER -->
+
+            <div class="newsletter">
+
+                <i class="fa-regular fa-envelope"></i>
+
+                <h2>Subscribe to NewsHub</h2>
+
+                <p>
+                    Get the latest news delivered directly
+                    to your inbox.
+                </p>
+
+                <input type="email"
+                       id="email"
+                       placeholder="Enter your email">
+
+                <button id="subscribeBtn">
+                    Subscribe
+                </button>
+
+            </div>
+
+
+            <!-- SOCIAL -->
+
+            <div class="sidebar-box">
+
+                <div class="sidebar-title">
+                    <h2>Follow Us</h2>
+                </div>
+
+                <div class="social">
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+
+            <div class="logo">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>News<span>Hub</span></span>
+            </div>
+
+            <p>
+                Your trusted destination for the latest
+                news, stories and updates from around the world.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <a href="#">Home</a>
+            <a href="#">Latest News</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>Categories</h3>
+
+            <a href="#">National</a>
+            <a href="#">World</a>
+            <a href="#">Technology</a>
+            <a href="#">Sports</a>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 NewsHub. All Rights Reserved.
+    </div>
+
+</footer>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>Subscribed successfully!</span>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
